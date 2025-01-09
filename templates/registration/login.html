@@ -144,6 +144,28 @@
         .login-container button:active {
             transform: translateY(1px);
         }
+
+        .show-credentials {
+            margin-top: 15px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            color: #333;
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .show-credentials:hover {
+            background-color: #e6e6e6;
+        }
+
+        .credentials {
+            margin-top: 15px;
+            display: none; /* Initially hidden */
+            font-size: 14px;
+            color: #555;
+        }
     </style>
 </head>
 <body>
@@ -156,10 +178,6 @@
         <div class="description-container">
             <h1>Welcome to the University ERP System!</h1>
             <p>Streamlining academic processes and enhancing communication between students and faculty, our platform simplifies your educational experience. Manage your courses, track your performance, and access essential resources all in one place.</p>
-            <!-- <div class="description-images">
-                <img src="{% static 'images/erp1.jpg' %}" alt="Image 1">
-                <img src="{% static 'images/erp2.jpg' %}" alt="Image 2">
-            </div> -->
         </div>
         <div class="login-container">
             <h1>Sign In</h1>
@@ -171,7 +189,32 @@
                 <b>{{ form.as_p }}</b>
                 <button type="submit"><b>Log In</b></button>
             </form>
+            <button class="show-credentials" onclick="revealCredentials()">Show Credentials</button>
+            <div class="credentials" id="credentials">
+                <h3>Admin - </h3>
+                <p><b>Username:</b> admin</p>
+                <p><b>Password:</b> admin*1234</p> <br>
+                
+                <h3>Student - </h3>
+                <p><b>Username:</b> student</p>
+                <p><b>Password:</b> abcd1efgh</p> <br>
+                
+                <h3>Faculty - </h3>
+                <p><b>Username:</b> faculty</p>
+                <p><b>Password:</b> abcd1efgh</p>
+            </div>
         </div>
     </div>
+
+    <script>
+        function revealCredentials() {
+            const credentialsDiv = document.getElementById('credentials');
+            if (credentialsDiv.style.display === 'none' || credentialsDiv.style.display === '') {
+                credentialsDiv.style.display = 'block';
+            } else {
+                credentialsDiv.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
