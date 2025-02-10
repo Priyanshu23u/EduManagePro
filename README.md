@@ -1,4 +1,4 @@
-# College Management System
+# EduManagePro : College Management System
 
 This Django-based project is a comprehensive system designed for managing various entities and workflows within a college. It integrates academic, financial, library, and administrative functions to streamline operations for students, faculty, and administrators.
 
